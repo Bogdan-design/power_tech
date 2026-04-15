@@ -70,8 +70,8 @@ const Contact = () => {
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
-        <div className="mb-16 text-center">
-          <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-cyan-200">
+        <div className="mb-12 text-center sm:mb-16">
+          <div className="mx-auto mb-5 inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-200 sm:text-xs sm:tracking-[0.35em]">
             Power Tech
           </div>
           <h2 className="mb-4 text-4xl font-bold text-slate-900 md:text-5xl">
@@ -84,8 +84,8 @@ const Contact = () => {
 
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
           <div className="space-y-8">
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/60">
-              <h3 className="mb-6 text-2xl font-bold text-slate-900">
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/60 sm:p-8">
+              <h3 className="mb-6 text-xl font-bold text-slate-900 sm:text-2xl">
                 {t?.contact?.info?.addressTitle || 'Contact Information'}
               </h3>
               <div className="space-y-6">
@@ -117,17 +117,17 @@ const Contact = () => {
 
               <div className="mt-8 grid gap-4">
                 {companyInfo.phones.map((phone) => (
-                  <div key={phone.href} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
+                  <div key={phone.href} className="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="min-w-0">
                         <p className="text-sm uppercase tracking-[0.2em] text-slate-500">{phone.label}</p>
-                        <p className="mt-1 text-xl font-semibold text-slate-900">{phone.value}</p>
+                        <p className="mt-1 break-words text-lg font-semibold text-slate-900 sm:text-xl">{phone.value}</p>
                         <p className="mt-2 text-sm text-green-600">WhatsApp available</p>
                       </div>
-                      <div className="flex gap-3">
+                      <div className="flex flex-col gap-3 sm:flex-row">
                         <a
                           href={`tel:${phone.href}`}
-                          className="inline-flex items-center gap-2 rounded-xl bg-cyan-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyan-700"
+                          className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyan-700"
                         >
                           <Phone className="h-4 w-4" />
                           Call
@@ -136,7 +136,7 @@ const Contact = () => {
                           href={phone.whatsapp}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-2 rounded-xl bg-green-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-green-600"
+                          className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-green-600"
                         >
                           <MessageCircle className="h-4 w-4" />
                           WhatsApp
@@ -148,15 +148,15 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-8 shadow-xl shadow-slate-200/60">
-              <div className="mb-6 flex items-center justify-between gap-4">
+            <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-xl shadow-slate-200/60 sm:p-8">
+              <div className="mb-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">
+                  <p className="text-xs uppercase tracking-[0.2em] text-cyan-300 sm:text-sm sm:tracking-[0.3em]">
                     Dane rejestrowe
                   </p>
-                  <h3 className="mt-2 text-2xl font-bold text-slate-900">{companyInfo.legalName}</h3>
+                  <h3 className="mt-2 break-words text-xl font-bold text-slate-900 sm:text-2xl">{companyInfo.legalName}</h3>
                 </div>
-                <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">
+                <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-200 sm:text-xs sm:tracking-[0.3em]">
                   Verified
                 </div>
               </div>
@@ -190,8 +190,8 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-xl shadow-slate-200/60">
-            <h3 className="mb-2 text-2xl font-bold text-slate-900">
+          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-xl shadow-slate-200/60 sm:p-8">
+            <h3 className="mb-2 text-xl font-bold text-slate-900 sm:text-2xl">
               {t?.contact?.form?.title || 'Send a Message'}
             </h3>
             <p className="mb-6 text-sm leading-relaxed text-slate-600">

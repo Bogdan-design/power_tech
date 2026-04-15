@@ -32,18 +32,18 @@ const Header = () => {
           : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="flex items-center gap-2 group"
+            className="group flex min-w-0 items-center gap-2"
             aria-label="POWER TECH Home"
           >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-cyan-700 transition-transform duration-300 group-hover:scale-110">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
-            <span className="text-xl font-bold text-slate-900">POWER TECH</span>
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-cyan-700 transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-10">
+              <Zap className="h-5 w-5 text-white sm:h-6 sm:w-6" />
+            </div>
+            <span className="truncate text-base font-bold text-slate-900 sm:text-xl">POWER TECH</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -76,11 +76,11 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-4">
+          <div className="flex items-center gap-2 md:hidden">
             <LanguageSwitcher />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-slate-900"
+              className="rounded-xl p-2 text-slate-900"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -90,7 +90,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="mt-4 border-t border-slate-200 py-4 md:hidden">
+          <div className="mt-3 border-t border-slate-200 py-4 md:hidden">
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection('hero')}
