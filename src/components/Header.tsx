@@ -3,6 +3,22 @@ import { useLanguage } from '@/components/LanguageContext';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { Zap, Menu, X } from 'lucide-react';
 
+const scrollToSectionWithOffset = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (!element) {
+    return;
+  }
+
+  const headerOffset = 96;
+  const elementTop = element.getBoundingClientRect().top + window.scrollY;
+  const targetPosition = Math.max(elementTop - headerOffset, 0);
+
+  window.scrollTo({
+    top: targetPosition,
+    behavior: 'smooth',
+  });
+};
+
 const Header = () => {
   const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,19 +32,25 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
+    scrollToSectionWithOffset(sectionId);
+    setIsMobileMenuOpen(false);
   };
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-lg shadow-slate-300/30'
+        isScrolled || isMobileMenuOpen
+          ? 'bg-white/95 backdrop-blur-md shadow-lg shadow-slate-300/30'
           : 'bg-transparent'
       }`}
     >
@@ -90,29 +112,29 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="mt-3 border-t border-slate-200 py-4 md:hidden">
-            <div className="flex flex-col gap-4">
+          <div className="mt-3 rounded-3xl border border-slate-200 bg-white p-5 shadow-2xl shadow-slate-300/20 md:hidden">
+            <div className="flex flex-col gap-3">
               <button
                 onClick={() => scrollToSection('hero')}
-                className="text-left font-medium text-slate-700 transition-colors duration-300 hover:text-cyan-700"
+                className="rounded-2xl bg-slate-50 px-4 py-3 text-left font-medium text-slate-700 transition-colors duration-300 hover:bg-cyan-50 hover:text-cyan-700"
               >
                 {t?.nav?.home || 'Home'}
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="text-left font-medium text-slate-700 transition-colors duration-300 hover:text-cyan-700"
+                className="rounded-2xl bg-slate-50 px-4 py-3 text-left font-medium text-slate-700 transition-colors duration-300 hover:bg-cyan-50 hover:text-cyan-700"
               >
                 {t?.nav?.services || 'Services'}
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="text-left font-medium text-slate-700 transition-colors duration-300 hover:text-cyan-700"
+                className="rounded-2xl bg-slate-50 px-4 py-3 text-left font-medium text-slate-700 transition-colors duration-300 hover:bg-cyan-50 hover:text-cyan-700"
               >
                 {t?.nav?.about || 'About'}
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="text-left font-medium text-slate-700 transition-colors duration-300 hover:text-cyan-700"
+                className="rounded-2xl bg-slate-50 px-4 py-3 text-left font-medium text-slate-700 transition-colors duration-300 hover:bg-cyan-50 hover:text-cyan-700"
               >
                 {t?.nav?.contact || 'Contact'}
               </button>
@@ -121,6 +143,8 @@ const Header = () => {
         )}
       </nav>
     </header>
+    {isMobileMenuOpen && <div className="fixed inset-0 z-40 bg-slate-950/20 backdrop-blur-[1px] md:hidden" onClick={() => setIsMobileMenuOpen(false)} />}
+    </>
   );
 };
 

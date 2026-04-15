@@ -3,14 +3,27 @@ import { useLanguage } from '@/components/LanguageContext';
 import { Zap } from 'lucide-react';
 import { companyInfo } from '@/lib/companyInfo';
 
+const scrollToSectionWithOffset = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (!element) {
+    return;
+  }
+
+  const headerOffset = 96;
+  const elementTop = element.getBoundingClientRect().top + window.scrollY;
+  const targetPosition = Math.max(elementTop - headerOffset, 0);
+
+  window.scrollTo({
+    top: targetPosition,
+    behavior: 'smooth',
+  });
+};
+
 const Footer = () => {
   const { t } = useLanguage();
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToSectionWithOffset(sectionId);
   };
 
   const links = [

@@ -2,6 +2,22 @@ import React from 'react';
 import { useLanguage } from '@/components/LanguageContext';
 import { ArrowRight, ShieldCheck, Cable, Factory } from 'lucide-react';
 
+const scrollToSectionWithOffset = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (!element) {
+    return;
+  }
+
+  const headerOffset = 96;
+  const elementTop = element.getBoundingClientRect().top + window.scrollY;
+  const targetPosition = Math.max(elementTop - headerOffset, 0);
+
+  window.scrollTo({
+    top: targetPosition,
+    behavior: 'smooth',
+  });
+};
+
 const Hero = () => {
   const { t } = useLanguage();
   const stats = [
@@ -11,10 +27,7 @@ const Hero = () => {
   ];
 
   const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToSectionWithOffset('contact');
   };
 
   return (
