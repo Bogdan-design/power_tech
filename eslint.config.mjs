@@ -6,7 +6,7 @@ import tsPlugin from '@typescript-eslint/eslint-plugin';
 import globals from 'globals';
 
 export default [
-	{ ignores: ['node_modules/**', 'dist/**', 'build/**', 'vite.config.js', 'src/components/ui/**'] },
+	{ ignores: ['node_modules/**', 'dist/**', 'build/**', 'vite.config.ts', 'src/components/ui/**'] },
 	{
 		files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
 		plugins: { react, 'react-hooks': reactHooks, import: importPlugin, '@typescript-eslint': tsPlugin },
@@ -52,5 +52,5 @@ export default [
 			'import/no-cycle': 'off', // AI rarely makes this error, and the rule is very slow to run
 		},
 	},
-	{ files: ['tools/**/*.js', 'tailwind.config.js', 'vite.config.js'], languageOptions: { globals: globals.node } },
+	{ files: ['tools/**/*.ts', 'tailwind.config.ts', 'postcss.config.ts', 'vite.config.ts'], languageOptions: { globals: globals.node } },
 ];

@@ -20,6 +20,14 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/main.tsx", "src/vite-env.d.ts"],
+  "include": [
+    "src",
+    "src/vite-env.d.ts",
+    "vite.config.ts",
+    "tailwind.config.ts",
+    "postcss.config.ts",
+    "plugins/**/*.ts",
+    "tools/**/*.ts"
+  ],
   "exclude": ["dist", "node_modules"]
 }

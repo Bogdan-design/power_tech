@@ -8,8 +8,7 @@ Firmowa strona POWER TECH zbudowana na `Vite + React + TypeScript`.
 - React 18
 - TypeScript
 - Tailwind CSS
-- GitHub Actions
-- Hostinger FTP deploy
+- Vercel
 
 ## Lokalny start
 
@@ -26,28 +25,9 @@ npm run lint
 npm run build
 ```
 
-## Autodeploy na Hostinger
+## Deploy
 
-Workflow znajduje się w:
-
-- `.github/workflows/deploy.yml`
-
-Instrukcja konfiguracji sekretów GitHub:
-
-- `docs/hostinger-deploy.md`
-
-Wymagane GitHub Secrets:
-
-- `FTP_SERVER`
-- `FTP_USERNAME`
-- `FTP_PASSWORD`
-- `FTP_SERVER_DIR`
-
-Najczęściej `FTP_SERVER_DIR` to:
-
-```text
-/public_html/
-```
+Projekt jest wdrażany na `Vercel` bezpośrednio z repozytorium GitHub po pushu do `main`.
 
 ## Co wrzucać do GitHub
 
@@ -60,9 +40,9 @@ Do repozytorium wrzucaj:
 - `package.json`
 - `package-lock.json`
 - `tsconfig.json`
-- `vite.config.js`
-- `tailwind.config.js`
-- `postcss.config.js`
+- `vite.config.ts`
+- `tailwind.config.ts`
+- `postcss.config.ts`
 - `eslint.config.mjs`
 - `index.html`
 - `.gitignore`
