@@ -15,8 +15,8 @@ const PowerTechPage = () => {
   const seoData = {
     pl: {
       title: 'POWER TECH - Profesjonalne Instalacje Elektryczne | Polska, Niemcy, Benelux',
-      description: 'POWER TECH Sp. z o.o. - specjaliści w instalacjach elektrycznych, słaboprądowych i pracach serwerowych dla obiektów przemysłowych, komercyjnych i mieszkalnych. Realizacje na terenie całej Europy, w tym w Irlandii.',
-      keywords: 'instalacje elektryczne, słaboprądowe, serwerownie, okablowanie strukturalne, LAN, światłowód, instalacje przemysłowe, mieszkalne, Europa, Irlandia'
+      description: 'POWER TECH Sp. z o.o. - specjaliści w instalacjach elektrycznych, niskoprądowych i pracach serwerowych dla obiektów przemysłowych, komercyjnych i mieszkalnych. Realizacje na terenie całej Europy, w tym w Irlandii.',
+      keywords: 'instalacje elektryczne, niskoprądowe, serwerownie, okablowanie strukturalne, LAN, światłowód, instalacje przemysłowe, mieszkalne, Europa, Irlandia'
     },
     de: {
       title: 'POWER TECH - Professionelle Elektroinstallationen | Polen, Deutschland, Benelux',

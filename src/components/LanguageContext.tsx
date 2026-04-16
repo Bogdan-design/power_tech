@@ -24,8 +24,8 @@ export const translations = {
     },
     hero: {
       title: 'POWER TECH',
-      subtitle: 'Instalacje elektryczne, słaboprądowe i serwerowe dla obiektów przemysłowych, mieszkalnych i komercyjnych',
-      description: 'Wykonujemy kompleksowe instalacje elektryczne, słaboprądowe oraz prace w serwerowniach dla obiektów przemysłowych, komercyjnych i mieszkalnych. Mamy doświadczenie w realizacjach na terenie całej Europy, w tym również w Irlandii.',
+      subtitle: 'Instalacje elektryczne, niskoprądowe i serwerowe dla obiektów przemysłowych, mieszkalnych i komercyjnych',
+      description: 'Wykonujemy kompleksowe instalacje elektryczne, niskoprądowe oraz prace w serwerowniach dla obiektów przemysłowych, komercyjnych i mieszkalnych. Mamy doświadczenie w realizacjach na terenie całej Europy, w tym również w Irlandii.',
       cta: 'Skontaktuj się z nami'
     },
     services: {
@@ -41,8 +41,8 @@ export const translations = {
           description: 'Precyzyjne wykonanie zakończeń kabli z zastosowaniem najwyższej jakości materiałów.'
         },
         {
-          title: 'Okablowanie strukturalne i słaboprądowe',
-          description: 'Systemy LAN, światłowodowe i słaboprądowe zapewniające niezawodną komunikację w firmie i budynku.'
+          title: 'Okablowanie strukturalne i niskoprądowe',
+          description: 'Systemy LAN, światłowodowe i niskoprądowe zapewniające niezawodną komunikację w firmie i budynku.'
         },
         {
           title: 'Połączenia szaf, racków i serwerowni',
@@ -62,7 +62,7 @@ export const translations = {
       title: 'O POWER TECH',
       subtitle: 'Twój partner w profesjonalnych instalacjach elektrycznych',
       content: [
-        'POWER TECH Sp. z o.o. specjalizuje się w projektowaniu i wykonywaniu instalacji elektrycznych, słaboprądowych oraz prac w serwerowniach dla obiektów przemysłowych, komercyjnych oraz mieszkalnych. Dzięki wieloletniemu doświadczeniu realizujemy prace solidnie i terminowo na terenie całej Europy, w tym również w Irlandii.',
+        'POWER TECH Sp. z o.o. specjalizuje się w projektowaniu i wykonywaniu instalacji elektrycznych, niskoprądowych oraz prac w serwerowniach dla obiektów przemysłowych, komercyjnych oraz mieszkalnych. Dzięki wieloletniemu doświadczeniu realizujemy prace solidnie i terminowo na terenie całej Europy, w tym również w Irlandii.',
         'Nasz zespół wykwalifikowanych inżynierów i techników realizuje projekty od instalacji w budynkach mieszkalnych i biurowych po rozbudowane systemy dla dużych obiektów przemysłowych, hal, serwerowni i infrastruktury teletechnicznej. Zapewniamy bezpieczeństwo, porządek na budowie i zgodność z obowiązującymi normami.',
         'Stawiamy na nowoczesne technologie, profesjonalizm i długoterminowe partnerstwo z naszymi klientami.'
       ]
