@@ -3,16 +3,15 @@ export const companyInfo = {
   website: 'https://powertech.net.pl',
   email: 'info@powertech.net.pl',
   address: {
-    street: 'ul. Jana Pawla II 6',
-    city: 'Wielka Wies',
-    postalCode: '64-320',
-    country: 'Poland',
-    display: 'ul. Jana Pawla II 6, 64-320 Wielka Wies, Poland',
-    source: 'https://aleo.com/pl/firma/power-tech-spolka-z-ograniczona-odpowiedzialnoscia',
+    street: 'ul. Turkusowa 23A',
+    city: 'Warszawa',
+    postalCode: '05-077',
+    country: 'Polska',
+    display: 'ul. Turkusowa 23A, 05-077 Warszawa, Polska',
   },
   registry: {
-    nip: '7872138397',
-    krs: '0000949218',
+    nip: '9522275829',
+    regon: '543037592',
   },
   phones: [
     {

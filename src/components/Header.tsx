@@ -50,8 +50,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isMobileMenuOpen
-          ? 'bg-white/95 backdrop-blur-md shadow-lg shadow-slate-300/30'
-          : 'bg-transparent'
+          ? 'border-b border-slate-200 bg-white/90 backdrop-blur-md'
+          : 'border-b border-transparent bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-4 py-3 sm:py-4">
@@ -59,38 +59,41 @@ const Header = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="group flex min-w-0 items-center gap-2"
+            className="group flex min-w-0 items-center gap-3"
             aria-label="POWER TECH Home"
           >
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-cyan-700 transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-10">
-              <Zap className="h-5 w-5 text-white sm:h-6 sm:w-6" />
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-slate-800 bg-slate-950 transition-colors duration-300 group-hover:border-amber-400">
+              <Zap className="h-5 w-5 text-amber-400 sm:h-6 sm:w-6" strokeWidth={2.5} />
             </div>
-            <span className="truncate text-base font-bold text-slate-900 sm:text-xl">POWER TECH</span>
+            <span className="flex min-w-0 flex-col leading-none">
+              <span className="font-display truncate text-base font-bold tracking-tight text-slate-900 sm:text-lg">POWER TECH</span>
+              <span className="font-tech hidden text-[10px] uppercase tracking-[0.25em] text-slate-400 sm:block">Electrical Systems</span>
+            </span>
           </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection('hero')}
-              className="font-medium text-slate-700 transition-colors duration-300 hover:text-cyan-700"
+              className="font-tech text-sm text-slate-600 transition-colors duration-300 hover:text-slate-950"
             >
               {t?.nav?.home || 'Home'}
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="font-medium text-slate-700 transition-colors duration-300 hover:text-cyan-700"
+              className="font-tech text-sm text-slate-600 transition-colors duration-300 hover:text-slate-950"
             >
               {t?.nav?.services || 'Services'}
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="font-medium text-slate-700 transition-colors duration-300 hover:text-cyan-700"
+              className="font-tech text-sm text-slate-600 transition-colors duration-300 hover:text-slate-950"
             >
               {t?.nav?.about || 'About'}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="font-medium text-slate-700 transition-colors duration-300 hover:text-cyan-700"
+              className="font-tech text-sm text-slate-600 transition-colors duration-300 hover:text-slate-950"
             >
               {t?.nav?.contact || 'Contact'}
             </button>
@@ -112,29 +115,29 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="mt-3 rounded-3xl border border-slate-200 bg-white p-5 shadow-2xl shadow-slate-300/20 md:hidden">
-            <div className="flex flex-col gap-3">
+          <div className="mt-3 border border-slate-200 bg-white p-4 shadow-xl shadow-slate-300/20 md:hidden">
+            <div className="flex flex-col">
               <button
                 onClick={() => scrollToSection('hero')}
-                className="rounded-2xl bg-slate-50 px-4 py-3 text-left font-medium text-slate-700 transition-colors duration-300 hover:bg-cyan-50 hover:text-cyan-700"
+                className="font-tech border-l-2 border-transparent px-4 py-3 text-left text-sm text-slate-700 transition-colors duration-300 hover:border-amber-400 hover:bg-slate-50 hover:text-slate-950"
               >
                 {t?.nav?.home || 'Home'}
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="rounded-2xl bg-slate-50 px-4 py-3 text-left font-medium text-slate-700 transition-colors duration-300 hover:bg-cyan-50 hover:text-cyan-700"
+                className="font-tech border-l-2 border-transparent px-4 py-3 text-left text-sm text-slate-700 transition-colors duration-300 hover:border-amber-400 hover:bg-slate-50 hover:text-slate-950"
               >
                 {t?.nav?.services || 'Services'}
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="rounded-2xl bg-slate-50 px-4 py-3 text-left font-medium text-slate-700 transition-colors duration-300 hover:bg-cyan-50 hover:text-cyan-700"
+                className="font-tech border-l-2 border-transparent px-4 py-3 text-left text-sm text-slate-700 transition-colors duration-300 hover:border-amber-400 hover:bg-slate-50 hover:text-slate-950"
               >
                 {t?.nav?.about || 'About'}
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="rounded-2xl bg-slate-50 px-4 py-3 text-left font-medium text-slate-700 transition-colors duration-300 hover:bg-cyan-50 hover:text-cyan-700"
+                className="font-tech border-l-2 border-transparent px-4 py-3 text-left text-sm text-slate-700 transition-colors duration-300 hover:border-amber-400 hover:bg-slate-50 hover:text-slate-950"
               >
                 {t?.nav?.contact || 'Contact'}
               </button>

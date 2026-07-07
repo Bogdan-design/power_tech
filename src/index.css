@@ -4,31 +4,31 @@
 
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
+    /* Neutral, light foundation — the plastic dark shadcn theme is gone */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 38 92% 50%;
     --radius: 0.5rem;
+
+    /* Brand tokens — industrial graphite + signal amber */
+    --graphite: 222 47% 8%;
+    --amber: 38 92% 50%;
   }
 }
 
@@ -37,18 +37,75 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-    font-family: "Segoe UI", "Arial Narrow", Arial, sans-serif;
-    background:
-      radial-gradient(circle at top, rgba(255, 255, 255, 0.95), transparent 20%),
-      radial-gradient(circle at right top, rgba(34, 211, 238, 0.10), transparent 24%),
-      linear-gradient(180deg, #f8fafc 0%, #eef6fb 40%, #f8fafc 100%);
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f6f7f9;
   }
+  h1, h2, h3 {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Typographic helpers */
+.font-display {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+}
+.font-tech {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* --- Industrial / engineering motifs --- */
+
+/* Blueprint grid for dark sections */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.10) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Finer grid for light sections */
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Hairline "wire" divider with a live amber node */
+.wire-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.5) 20%, rgba(148, 163, 184, 0.5) 80%, transparent);
+}
+
+/* Small technical corner ticks on cards */
+.corner-ticks::before,
+.corner-ticks::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: currentColor;
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+}
+.corner-ticks::before {
+  top: 12px;
+  left: 12px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.corner-ticks::after {
+  bottom: 12px;
+  right: 12px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
 }
 
 /* Custom animations */
@@ -66,65 +123,53 @@ html {
 .animate-fade-in {
   animation: fade-in 0.8s ease-out;
 }
-
 .animate-fade-in-delay-1 {
-  animation: fade-in 0.8s ease-out 0.2s backwards;
+  animation: fade-in 0.8s ease-out 0.15s backwards;
 }
-
 .animate-fade-in-delay-2 {
-  animation: fade-in 0.8s ease-out 0.4s backwards;
+  animation: fade-in 0.8s ease-out 0.3s backwards;
 }
-
 .animate-fade-in-delay-3 {
-  animation: fade-in 0.8s ease-out 0.6s backwards;
+  animation: fade-in 0.8s ease-out 0.45s backwards;
 }
 
-/* Glassmorphism utilities */
-.glass {
-  @apply bg-white/5 backdrop-blur-sm border border-white/10;
+/* Slow current pulse along the accent line */
+@keyframes current-flow {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.current-line {
+  background: linear-gradient(90deg, transparent, hsl(var(--amber)) 45%, #fde68a 50%, hsl(var(--amber)) 55%, transparent);
+  background-size: 200% 100%;
+  animation: current-flow 3.5s linear infinite;
 }
 
-.glass-hover {
-  @apply hover:bg-white/10 hover:border-white/20;
-}
-
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(circle at center, black, transparent 80%);
-}
-
-/* Custom scrollbar */
+/* Custom scrollbar — graphite + amber */
 ::-webkit-scrollbar {
   width: 12px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #e2e8f0;
+  background: #0b0e14;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #0891b2;
-  border-radius: 6px;
+  background: #f59e0b;
+  border: 3px solid #0b0e14;
+  border-radius: 0;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #0e7490;
+  background: #fbbf24;
 }
 
 /* Focus visible for accessibility */
 *:focus-visible {
-  @apply outline-none ring-2 ring-cyan-400 ring-offset-2 ring-offset-white;
+  @apply outline-none ring-2 ring-amber-400 ring-offset-2 ring-offset-white;
 }
 
-/* Ensure proper text contrast */
+/* Text contrast helpers */
 input::placeholder,
 textarea::placeholder {
   @apply text-slate-400;
 }
-
 input,
 textarea {
   @apply text-slate-900;
