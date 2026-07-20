@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>POWER TECH — QR анкети кандидата</title>
+    <style>
+      @page { size: A4; margin: 20mm; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+        background: #f6f7f9;
+        color: #0b0e14;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .card {
+        width: 100%;
+        max-width: 420px;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        padding: 32px;
+        text-align: center;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .brand .mark {
+        width: 40px; height: 40px;
+        display: flex; align-items: center; justify-content: center;
+        background: #0b0e14; border: 1px solid #0b0e14;
+      }
+      .brand .mark svg { color: #f59e0b; }
+      .brand .name { font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
+      .brand .sub { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #64748b; }
+      .qr { width: 260px; height: 260px; margin: 0 auto 20px; }
+      .qr img { width: 100%; height: 100%; display: block; }
+      .caption { font-size: 17px; font-weight: 600; margin: 6px 0; }
+      .caption.ru { color: #475569; font-weight: 500; }
+      .url { margin-top: 16px; font-size: 12px; color: #64748b; word-break: break-all; }
+      @media print { body { background: #fff; } .card { border: none; } }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </span>
+        <span style="text-align:left; line-height:1.1;">
+          <span class="name">POWER TECH</span><br />
+          <span class="sub">Робота в Європі</span>
+        </span>
+      </div>
+
+      <div class="qr">
+        <img src="candidate-qr.svg" alt="QR — анкета кандидата POWER TECH" />
+      </div>
+
+      <p class="caption">Скануйте та заповніть анкету</p>
+      <p class="caption ru">Отсканируйте и заполните анкету</p>
+
+      <p class="url">https://www.powertech.net.pl/candidate</p>
+    </div>
+  </body>
+</html>
