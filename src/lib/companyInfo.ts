@@ -3,11 +3,11 @@ export const companyInfo = {
   website: 'https://powertech.net.pl',
   email: 'info@powertech.net.pl',
   address: {
-    street: 'ul. Turkusowa 23A',
+    street: 'Aleje Jerozolimskie 85/21',
     city: 'Warszawa',
-    postalCode: '05-077',
+    postalCode: '02-001',
     country: 'Polska',
-    display: 'ul. Turkusowa 23A, 05-077 Warszawa, Polska',
+    display: 'Aleje Jerozolimskie 85/21, 02-001 Warszawa, Polska',
   },
   registry: {
     nip: '9522275829',

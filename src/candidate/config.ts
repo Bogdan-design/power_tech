@@ -40,7 +40,7 @@ export const CANDIDATE_PRODUCTION_URL = 'https://www.powertech.net.pl/candidate'
 export const dataController = {
   name: 'POWER TECH Sp. z o.o.',
   email: 'info@powertech.net.pl',
-  address: 'ul. Turkusowa 23A, 05-077 Warszawa, Polska',
+  address: 'Aleje Jerozolimskie 85/21, 02-001 Warszawa, Polska',
   // No privacy policy page yet — leave empty so no dead link is shown.
   // When the page exists, set e.g. 'https://www.powertech.net.pl/privacy'.
   privacyPolicyUrl: '',
